@@ -1,0 +1,14 @@
+<project name="ant" default="package">
+<target name="compile">
+<mkdir dir="classes"/>
+<javac srcdir="src" destdir="classes"/>
+</target>
+<target name="package" depends="compile">
+<mkdir dir="lib"/>
+<jar basedir="classes" destfile="lib/flip_login.jar"/>
+</target>
+<target name="clean">
+<delete dir="classes"/>
+<delete dir="lib"/>
+</target>
+</project>
